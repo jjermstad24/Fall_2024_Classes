@@ -65,9 +65,9 @@ class Satellite:
         if self.enable_torque:
             L += 3*self.mu/r**5*(np.cross(x[:3],np.dot(self.I,x[:3])))
             
-        L += [0,-self.Iw[0]*self.Ow[0]*x[11],self.Iw[0]*self.Ow[0]*x[10]]              # Flywheel about b1
-        L += [self.Iw[1]*self.Ow[1]*x[11],0,-self.Iw[1]*self.Ow[1]*x[9]]               # Flywheel about b2
-        L += [-self.Iw[2]*self.Ow[2]*x[10],self.Iw[2]*self.Ow[2]*x[9],0]               # Flywheel about b3
+            L += [0,-self.Iw[0]*self.Ow[0]*x[11],self.Iw[0]*self.Ow[0]*x[10]]              # Flywheel about b1
+            L += [self.Iw[1]*self.Ow[1]*x[11],0,-self.Iw[1]*self.Ow[1]*x[9]]               # Flywheel about b2
+            L += [-self.Iw[2]*self.Ow[2]*x[10],self.Iw[2]*self.Ow[2]*x[9],0]               # Flywheel about b3
 
         return np.array([x[3],
                         x[4],
